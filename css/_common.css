@@ -1,0 +1,43 @@
+:root {
+  --color-white: #ffffff;
+  --color-primary: #a53dff;
+  --color-primary-50: #edd8ff;
+  --color-secondary: #2b384c;
+  --text-gray-50: #f0f1f3;
+  --text-gray-300: #a5acb5;
+  --text-gray-400: #87909d;
+  --text-gray-600: #556070;
+  --text-gray-700: #424E60;
+  --text-gray-900: #132238;
+  --text-orange-50: #FFC8C8;
+  --text-dark-900: #333333;
+  --text-dark: #000000;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.items-center {
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fs-16 {
+  font-size: 16px;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.btn {
+  border: none;
+  background-color: var(--color-primary);
+}
