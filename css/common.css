@@ -13,7 +13,7 @@
   --text-dark-900: #333333;
   --text-dark: #000000;
 }
-.btn {
+body {
   border: none;
   background-color: var(--color-primary);
   font-family: "Work Sans", sans-serif;

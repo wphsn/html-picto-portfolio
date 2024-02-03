@@ -1,5 +1,14 @@
-header{
-    padding-block: 20px;
+header {
+  padding-block: 20px;
 }
-nav ul{list-style: none;display: flex;}
-nav ul a{display: block;padding-inline: 24px;padding-block: 12px;border-radius: 4px;color: var(--text-dark-900);} 
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul a {
+  display: block;
+  padding-inline: 24px;
+  padding-block: 12px;
+  border-radius: 4px;
+  color: var(--text-dark-900);
+}
