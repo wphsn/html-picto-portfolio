@@ -14,8 +14,6 @@
   --text-dark: #000000;
 }
 body {
-  border: none;
-  background-color: var(--color-primary);
   font-family: "Work Sans", sans-serif;
   font-size: 14px;
 }
