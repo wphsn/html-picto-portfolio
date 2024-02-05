@@ -34,20 +34,28 @@ header .mobile-toggler::after {
   transform-origin: center; /* Added for proper rotation */
 }
 
+header .mobile-toggler.active::before,
 header .mobile-toggler:focus::before,
 header .mobile-toggler:hover::before {
   transform: rotate(-45deg);
 }
 
+header .mobile-toggler.active::after,
 header .mobile-toggler:focus::after,
 header .mobile-toggler:hover::after {
   transform: rotate(45deg);
+}
+
+header .mobile-toggler.active,
+header .mobile-toggler.active {
+  box-shadow: none;
 }
 
 nav ul {
   list-style: none;
   display: flex;
 }
+
 nav ul a {
   display: block;
   padding-inline: 24px;
@@ -57,14 +65,6 @@ nav ul a {
 }
 
 /* media queries */
-@media all and (max-width: 480px) {
-  header nav ul {
-    visibility: visible;
-    opacity: 1;
-    top: 0;
-  }
-}
-
 
 @media all and (max-width: 1024px) {
   header .flex {
@@ -88,8 +88,7 @@ nav ul a {
   header .mobile-toggler {
     display: block;
   }
-  header nav ul {
-    flex-direction: column;
+  header nav .nav-items {
     position: absolute;
     right: 0;
     top: 200%;
@@ -99,10 +98,50 @@ nav ul a {
     visibility: hidden;
     z-index: -9;
   }
-  header nav button:focus + ul {
+  header nav ul {
+    flex-direction: column;
+  }
+
+  header nav button:focus + .nav-items {
     top: 100%;
     opacity: 1;
     visibility: visible;
     z-index: 9;
+  }
+  footer nav {
+    max-width: 300px;
+    margin: auto;
+  }
+  footer nav ul {
+    width: 100%;
+    flex-wrap: wrap;
+    opacity: 1;
+    visibility: visible;
+    justify-content: center;
+  }
+  footer nav ul li {
+    width: 25%;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 480px) {
+  header nav.open .nav-items {
+    padding-top: 50px;
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+    z-index: 9;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    display: block;
+  }
+  header nav.open .nav-items .mobile-toggler {
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 }
