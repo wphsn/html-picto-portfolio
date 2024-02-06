@@ -12,9 +12,51 @@
   --text-orange-50: #ffc8c8;
   --text-dark-900: #333333;
   --text-dark: #000000;
+
+  --size-10: 5.25rem; /*  84px */
+  --size-9: 4.5rem; /* 72px */
+  --size-8: 3.5rem; /* 56px */
+  --size-7: 3rem; /* 48px */
+  --size-6: 2.375rem; /* 38px */
+  --size-5: 1.5rem; /* 24px */
+  --size-4: 1.25rem; /* 20px */
+  --size-3: 1.125rem; /* 18px */
+  --size-2: 1rem; /* 16px */
+  --size-1: 0.875rem; /* 14px */
+}
+html {
+  font-size: 16px;
 }
 body {
   font-family: "Work Sans", sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  line-height: var(--size-5);
+  font-size: var(--size-1);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+h1 {
+  font-size: var(--size-9);
+  line-height: var(--size-10);
+}
+h2 {
+  font-size: var(--size-7);
+  line-height: var(--size-8);
+}
+h3 {
+  font-size: var(--size-6);
+  line-height: var(--size-7);
+}
+h4 {
+  font-size: var(--size-5);
+  line-height: var(--size-5);
+}
+h5 {
+  font-size: var(--size-4);
+  line-height: var(--size-5);
 }
