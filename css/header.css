@@ -1,165 +1,246 @@
 header {
-  padding-block: 20px;
+	padding-block: 20px;
+	position: sticky;
+	background: rgba(255, 255, 255, 0.95);
+	top: 0;
 }
+
 header.sticky {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  box-shadow: 0 0 10px #000;
-  padding: 5px;
-  background: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	left: 0;
+	box-shadow: 0 0 15px -10px #000;
+	padding: 0;
 }
+
+header.sticky nav {
+	padding-block: 8px;
+}
+
+header.sticky .logo {
+	padding-block: 8px;
+}
+
 header.sticky nav ul a {
-  padding-block: 5px;
+	padding-block: 8px;
 }
+
+header .logo img {
+	max-height: 60px;
+}
+
 header.sticky .logo img {
-  height: 40px;
+	max-height: 40px;
 }
+
 header .logo a {
-  display: flex;
+	display: flex;
 }
+
 header .mobile-toggler {
-  position: relative;
-  width: 26px;
-  height: 16px;
-  background-color: transparent;
-  border: none;
-  display: none;
-  gap: 3px;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 2px 0 #926e6e inset, 0 -2px 0 #000 inset;
-  cursor: pointer;
+	position: relative;
+	width: 26px;
+	height: 16px;
+	background-color: transparent;
+	border: none;
+	display: none;
+	gap: 3px;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 2px 0 #926e6e inset, 0 -2px 0 #000 inset;
+	cursor: pointer;
 }
 
 header .mobile-toggler:focus,
 header .mobile-toggler:hover {
-  box-shadow: none;
+	box-shadow: none;
 }
+
 header .mobile-toggler::before,
 header .mobile-toggler::after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 1px);
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--text-dark);
-  transition: all 300ms;
-  opacity: 1;
-  visibility: visible;
-  transform-origin: center; /* Added for proper rotation */
+	content: "";
+	position: absolute;
+	top: calc(50% - 1px);
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--text-dark);
+	transition: all 300ms;
+	opacity: 1;
+	visibility: visible;
+	transform-origin: center;
+	/* Added for proper rotation */
 }
 
-header .mobile-toggler.active::before,
+header nav.open .mobile-toggler::before,
 header .mobile-toggler:focus::before,
 header .mobile-toggler:hover::before {
-  transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
-header .mobile-toggler.active::after,
+header nav.open .mobile-toggler::after,
 header .mobile-toggler:focus::after,
 header .mobile-toggler:hover::after {
-  transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
-header .mobile-toggler.active,
+header nav.open .mobile-toggler.active,
 header .mobile-toggler.active {
-  box-shadow: none;
+	box-shadow: none;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
+	list-style: none;
+	display: flex;
 }
 
 nav ul a {
-  display: block;
-  padding-inline: 24px;
-  padding-block: 12px;
-  border-radius: 4px;
-  color: var(--text-dark-900);
+	display: block;
+	padding-inline: 24px;
+	padding-block: 12px;
+	border-radius: 4px;
+	color: var(--text-dark-900);
 }
+
+
 
 /* media queries */
 
 @media all and (max-width: 1024px) {
-  header .flex {
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 20px;
-  }
+	header .flex {
+		flex-direction: column;
+		justify-content: center;
+		row-gap: 20px;
+	}
+	header.sticky .flex {
+		row-gap: 0;
+	}
 }
 
 @media all and (max-width: 767px) {
-  header .flex {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  header nav {
-    position: relative;
-    display: flex;
-    align-self: stretch;
-    align-items: center;
-  }
-  header .mobile-toggler {
-    display: block;
-  }
-  header nav .nav-items {
-    position: absolute;
-    right: 0;
-    top: 200%;
-    background-color: #ddd;
-    min-width: 200px;
-    opacity: 0;
-    visibility: hidden;
-    z-index: -9;
-  }
-  header nav ul {
-    flex-direction: column;
-  }
+	header .flex {
+		flex-direction: row;
+		justify-content: space-between;
+	}
 
-  header nav button:focus + .nav-items {
-    top: 100%;
-    opacity: 1;
-    visibility: visible;
-    z-index: 9;
-  }
-  footer nav {
-    max-width: 300px;
-    margin: auto;
-  }
-  footer nav ul {
-    width: 100%;
-    flex-wrap: wrap;
-    opacity: 1;
-    visibility: visible;
-    justify-content: center;
-  }
-  footer nav ul li {
-    width: 25%;
-    text-align: center;
-  }
+	header nav {
+		position: relative;
+		display: flex;
+		align-self: stretch;
+		align-items: center;
+	}
+
+
+	header.sticky nav {
+		padding-block: 18px;
+	}
+
+	header {
+		width: 100%;
+		left: 0;
+		box-shadow: 0 0 15px -10px #000;
+		padding: 0;
+	}
+
+	header nav ul a {
+		padding-block: 8px;
+	}
+
+	header .logo img {
+		max-height: 60px;
+	}
+
+	header .logo img {
+		max-height: 40px;
+	}
+
+	header .mobile-toggler {
+		display: block;
+	}
+
+	header nav ul {
+		flex-direction: column;
+	}
+
+	header nav .nav-items {
+		position: absolute;
+		right: 0;
+		top: 200%;
+		background-color: #ddd;
+		min-width: 200px;
+		opacity: 0;
+		visibility: hidden;
+		z-index: -9;
+	}
+
+	header nav.open .nav-items>div {
+		position: relative;
+	}
+
+	header nav .nav-items>div .mobile-toggler {
+		position: absolute;
+		right: 5px;
+		top: 10px;
+	}
+
+	header nav.open .nav-items {
+		opacity: 1;
+		visibility: visible;
+		top: 100%;
+		z-index: 9;
+	}
+
+	header nav .nav-items button.mobile-toggler {
+		display: none;
+	}
+
+	header nav button:focus+.nav-items {
+		top: 100%;
+		opacity: 1;
+		visibility: visible;
+		z-index: 9;
+	}
+
+	header nav .nav-items button.mobile-toggler {
+		display: block;
+	}
+
+	footer nav {
+		max-width: 300px;
+		margin: auto;
+	}
+
+	footer nav ul {
+		width: 100%;
+		flex-wrap: wrap;
+		opacity: 1;
+		visibility: visible;
+		justify-content: center;
+	}
+
+	footer nav ul li {
+		width: 25%;
+		text-align: center;
+	}
 }
 
 @media all and (max-width: 480px) {
-  header nav.open .nav-items {
-    padding-top: 50px;
-    visibility: visible;
-    opacity: 1;
-    top: 0;
-    z-index: 9;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    overflow: hidden;
-    display: block;
-  }
-  header nav.open .nav-items .mobile-toggler {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
+	header nav.open .nav-items {
+		padding-top: 50px;
+		visibility: visible;
+		opacity: 1;
+		top: 0;
+		z-index: 9;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		overflow: hidden;
+		display: block;
+	}
+
+	header nav.open .nav-items .mobile-toggler {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
 }
