@@ -10,16 +10,34 @@ mobileToggler.forEach((element) => {
 // Get the header element
 var header = document.querySelector("header");
 
-// Get the offset position of the header
-var stickyOffset = header.offsetTop + 50;
+// Initialize the previous scroll position variable
+var prevScrollPos = window.pageYOffset;
+
+// Set the threshold for when to add/remove the sticky class
+var scrollThreshold = 20;
+
+// Flag to track whether the sticky class has been added
+var isStickyAdded = false;
 
 // Listen for the scroll event and add or remove the sticky class
 window.addEventListener("scroll", function () {
-  if (window.pageYOffset > stickyOffset) {
+  var currentScrollPos = window.pageYOffset;
+
+  if (
+    Math.abs(currentScrollPos - prevScrollPos) > scrollThreshold &&
+    !isStickyAdded
+  ) {
+    // Scrolling down or up beyond the threshold and sticky not added, add sticky class
     header.classList.add("sticky");
-  } else {
+    isStickyAdded = true;
+  } else if (currentScrollPos <= scrollThreshold && isStickyAdded) {
+    // Scrolling up to the top and sticky added, remove sticky class
     header.classList.remove("sticky");
+    isStickyAdded = false;
   }
+
+  // Update the previous scroll position
+  prevScrollPos = currentScrollPos;
 });
 
 function findNavGrandparent(element) {
